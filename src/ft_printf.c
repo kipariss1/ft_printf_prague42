@@ -6,7 +6,7 @@
 /*   By: krassudi <krassudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 15:36:00 by krassudi          #+#    #+#             */
-/*   Updated: 2024/06/24 20:39:03 by krassudi         ###   ########.fr       */
+/*   Updated: 2024/06/24 21:52:01 by krassudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	ft_printf(const char *str, ...)
 	va_start(args, str);
 	printf("%s", str);
 	va_end(args);
+	(void)i;
 	return (0);
 }
 
