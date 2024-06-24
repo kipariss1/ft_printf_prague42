@@ -1,0 +1,17 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "compile debug_ft_printf",
+            "command": "make",
+			"args": ["debug_ft_printf"]
+        },
+		{
+            "type": "shell",
+            "label": "clean debuf_ft_printf",
+            "command": "make",
+			"args": ["clean"]
+        }
+    ],
+    "version": "2.0.0"
+}
