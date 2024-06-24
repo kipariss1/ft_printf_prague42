@@ -6,10 +6,11 @@
 /*   By: krassudi <krassudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 15:36:00 by krassudi          #+#    #+#             */
-/*   Updated: 2024/06/07 17:59:07 by krassudi         ###   ########.fr       */
+/*   Updated: 2024/06/24 20:39:03 by krassudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "ft_printf.h"
 
 int	ft_printf(const char *str, ...)
