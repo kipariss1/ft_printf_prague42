@@ -6,36 +6,78 @@
 /*   By: krassudi <krassudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 15:36:00 by krassudi          #+#    #+#             */
-/*   Updated: 2024/06/27 22:17:02 by krassudi         ###   ########.fr       */
+/*   Updated: 2024/06/27 23:14:02 by krassudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_printf.h"
 
+int	recognise_format(char ch, va_list args)
+{
+	switch (ch)
+	{
+	case 'c': {
+		// case of printing char
+		ft_putchar_fd(va_arg(args, char), 1);
+		return (1);
+	}
+
+	case 's': {
+		// case of printing string
+		break;
+	}
+
+	case 'p': {
+		// case of printing pointer
+		break;
+	}
+
+	case 'd':
+	case 'i': {
+		// case of signed decimal int
+		break;
+	}
+
+	case 'u': {
+		// case of unsigned decimal integer
+		break;
+	}
+
+	case 'x': {
+		// case of unsigned hexadecimal integer
+		break;
+	}
+
+	case 'X': {
+		// case of unsigned hexadecimal integer (uppercase)
+		break; 
+	}
+	return (1);
+}
+
 int	ft_printf(const char *str, ...)
 {
 	int		i;
+	int		fin_print_len;
 	va_list	args;
-	
-	i = 0;
-	ft_putstr_fd((char *)str, 1);
-	ft_putchar_fd('\n', 1);
 	va_start(args, str);
-	while (i < 3)
+	fin_print_len = 0;
+	while (str[i])
 	{
-		int arg = va_arg(args, int);
-		ft_putnbr_fd(arg, 1);
+		if (str[i] == '%')
+			fin_print_len += recognise_format(str[++i], args);
+		else
+			ft_putchar_fd(str[i], 1);
 		i++;
+		fin_print_len++;
 	}
-	ft_putchar_fd('\n', 1);
 	va_end(args);
-	(void)i;
-	return (0);
+	return (fin_print_len);
 }
 
 int	main(void)
 {
-	ft_printf("This is the test for printing numbers: %d %d %d", 1, 2, 3);
+	ft_printf("This is the test for printing chars: %c %c %c", 'a', 'b', 'c');
 	return (0);
 }
