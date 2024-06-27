@@ -6,7 +6,7 @@
 /*   By: krassudi <krassudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 15:36:00 by krassudi          #+#    #+#             */
-/*   Updated: 2024/06/27 23:14:02 by krassudi         ###   ########.fr       */
+/*   Updated: 2024/06/27 23:27:19 by krassudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,43 +15,11 @@
 
 int	recognise_format(char ch, va_list args)
 {
-	switch (ch)
+	if (ch == 'c')
 	{
-	case 'c': {
 		// case of printing char
-		ft_putchar_fd(va_arg(args, char), 1);
+		ft_putchar_fd((char)va_arg(args, int), 1);
 		return (1);
-	}
-
-	case 's': {
-		// case of printing string
-		break;
-	}
-
-	case 'p': {
-		// case of printing pointer
-		break;
-	}
-
-	case 'd':
-	case 'i': {
-		// case of signed decimal int
-		break;
-	}
-
-	case 'u': {
-		// case of unsigned decimal integer
-		break;
-	}
-
-	case 'x': {
-		// case of unsigned hexadecimal integer
-		break;
-	}
-
-	case 'X': {
-		// case of unsigned hexadecimal integer (uppercase)
-		break; 
 	}
 	return (1);
 }
@@ -78,6 +46,6 @@ int	ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	ft_printf("This is the test for printing chars: %c %c %c", 'a', 'b', 'c');
+	ft_printf("This is the test for printing chars: %c %c %c\n", 'a', 'b', 'c');
 	return (0);
 }
