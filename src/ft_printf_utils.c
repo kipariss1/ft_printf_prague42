@@ -6,7 +6,7 @@
 /*   By: krassudi <krassudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 14:49:01 by krassudi          #+#    #+#             */
-/*   Updated: 2024/06/29 19:42:18 by krassudi         ###   ########.fr       */
+/*   Updated: 2024/06/29 20:46:44 by krassudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int	print_into_hex(size_t num)
 
 int	printptr(size_t ptr)
 {
-	int		print_len;
+	int	print_len;
 
 	print_len = 0;
 	if (ptr == 0)
@@ -62,7 +62,7 @@ int	printptr(size_t ptr)
 
 static int	numlen(int num)
 {
-	int len;
+	int	len;
 
 	if (num == 0)
 		return (1);
@@ -77,6 +77,37 @@ static int	numlen(int num)
 
 int	print_int(int num)
 {
-	ft_putnbr_fd(num, 1);	
+	ft_putnbr_fd(num, 1);
 	return (numlen(num));
+}
+
+static void	put_uint(unsigned int num)
+{
+	char	ch;
+
+	if (num >= 10)
+		print_uint(num / 10);
+	ch = '0' + (num % 10);
+	write(1, &ch, 1);
+}
+
+static int	numlen_u(unsigned int num)
+{
+	int	len;
+
+	if (num == 0)
+		return (1);
+	len = 0;
+	while (num)
+	{
+		len++;
+		num = num / 10;
+	}
+	return (len);
+}
+
+int	print_uint(unsigned int num)
+{
+	put_uint(num);
+	return (numlen_u(num));
 }
