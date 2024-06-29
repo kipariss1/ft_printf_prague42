@@ -6,7 +6,7 @@ SRC_DIR 	= ./src/
 LIB_DIR		= ./libft/
 INCLDIR		= ./include/
 
-SRC_FILES	= ft_printf.c
+SRC_FILES	= ft_printf.c ft_printf_utils.c
 SRC 		= $(addprefix $(SRC_DIR), $(SRC_FILES))
 
 I_L_FLAGS	= -I${INCLDIR} -L${LIB_DIR} -lft
