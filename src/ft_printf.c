@@ -6,7 +6,7 @@
 /*   By: krassudi <krassudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 15:36:00 by krassudi          #+#    #+#             */
-/*   Updated: 2024/06/29 20:47:38 by krassudi         ###   ########.fr       */
+/*   Updated: 2024/06/30 23:43:47 by krassudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ static int	recognise_format(char ch, va_list args)
 		print_len = print_int(va_arg(args, int));
 	else if (ch == 'u')
 		print_len = print_uint(va_arg(args, unsigned int));
+	else if (ch == 'x')
+		print_len = print_hex(va_arg(args, unsigned int), 'x');
+	else if (ch == 'X')
+		print_len = print_hex(va_arg(args, unsigned int), 'X');
 	return (print_len);
 }
 
@@ -60,8 +64,8 @@ int	main(void)
 	char	test[] = "this is test";
 	int		res;
 
-	res = ft_printf("This is the test for printing chars: %c %c %s %p %d %i %u\n", 'a',
-			'b', test, &test, 16, 256, 1025);
+	res = ft_printf("This is the test for printing chars: %c %c %s %p %d %i %u %x %X\n", 'a',
+			'b', test, &test, 16, 256, 1025, 10236, 10236);
 	(void)res;
 	return (0);
 }

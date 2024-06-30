@@ -12,5 +12,6 @@ int	printstr(char *str);
 int	printptr(size_t ptr);
 int	print_int(int num);
 int	print_uint(unsigned int num);
+int	print_hex(unsigned int num, char bs_case);
 
 #endif
