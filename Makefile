@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: krassudi <krassudi@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/06/30 23:57:36 by krassudi          #+#    #+#              #
+#    Updated: 2024/07/01 00:25:02 by krassudi         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CC 			= gcc
 CFLAGS		= -Wall -Werror -Wextra -g3
 
@@ -11,6 +23,8 @@ SRC 		= $(addprefix $(SRC_DIR), $(SRC_FILES))
 
 I_L_FLAGS	= -I${INCLDIR} -L${LIB_DIR} -lft
 
+OBJ 		= $(SRC:.c=.o)
+
 # Colors
 
 DEF_COLOR = \033[0;39m
@@ -23,6 +37,9 @@ MAGENTA = \033[0;95m
 CYAN = \033[0;96m
 WHITE = \033[0;97m
 
+.c.o:
+	${CC} ${CFLAGS} -c $< ${I_L_FLAGS} -o ${<:.c=.o}
+
 libft :
 	make -C ./libft all
 	@echo "$(GREEN) Libft is compiled"
@@ -32,8 +49,20 @@ debug_ft_printf : libft
 	${CC} ${CFLAGS} ${SRC} ${I_L_FLAGS} -o $@
 	@echo "$(GREEN) ft_printf compiled"
 
+$(NAME) : libft $(OBJ)
+	cp libft/libft.a .
+	mv libft.a $(NAME)
+	ar r $(NAME) $(OBJ)
+	@echo "$(GREEN) updated libft with printf compiled"
+
+all : $(NAME) clean
+
 clean : 
 	rm -f ./libft/libft.a
 	rm -f debug_ft_printf
+	rm -f $(OBJ)
 
-.PHONY : libft clean debug_ft_printf
+fclean : clean
+	rm -rf $(NAME)
+
+.PHONY : libft clean fclean debug_ft_printf

@@ -6,7 +6,7 @@
 /*   By: krassudi <krassudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 15:36:00 by krassudi          #+#    #+#             */
-/*   Updated: 2024/06/30 23:43:47 by krassudi         ###   ########.fr       */
+/*   Updated: 2024/06/30 23:52:19 by krassudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,13 @@ int	ft_printf(const char *str, ...)
 	return (fin_print_len);
 }
 
-int	main(void)
-{
-	char	test[] = "this is test";
-	int		res;
+// int	main(void)
+// {
+// 	char	test[] = "this is test";
+// 	int		res;
 
-	res = ft_printf("This is the test for printing chars: %c %c %s %p %d %i %u %x %X\n", 'a',
-			'b', test, &test, 16, 256, 1025, 10236, 10236);
-	(void)res;
-	return (0);
-}
+// 	res = ft_printf("This is the test for printing chars: %c %c %s %p %d %i %u %x %X\n", 
+// 		'a', 'b', test, &test, 16, 256, 1025, 10236, 10236);
+// 	(void)res;
+// 	return (0);
+// }
