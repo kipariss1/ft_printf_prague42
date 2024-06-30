@@ -6,7 +6,7 @@
 /*   By: krassudi <krassudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 15:36:00 by krassudi          #+#    #+#             */
-/*   Updated: 2024/07/01 00:26:26 by krassudi         ###   ########.fr       */
+/*   Updated: 2024/07/01 00:27:25 by krassudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ static int	recognise_format(char ch, va_list args)
 		print_len = print_hex(va_arg(args, unsigned int), 'x');
 	else if (ch == 'X')
 		print_len = print_hex(va_arg(args, unsigned int), 'X');
+	else if (ch == '%')
+		print_len = printchar('%');
 	return (print_len);
 }
 
