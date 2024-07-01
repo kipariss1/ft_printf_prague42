@@ -6,11 +6,11 @@
 /*   By: krassudi <krassudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 22:18:40 by krassudi          #+#    #+#             */
-/*   Updated: 2024/07/01 22:31:41 by krassudi         ###   ########.fr       */
+/*   Updated: 2024/07/01 22:33:55 by krassudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static int	numlen(int num)
 {

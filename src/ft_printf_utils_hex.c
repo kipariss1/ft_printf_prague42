@@ -6,11 +6,11 @@
 /*   By: krassudi <krassudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 22:30:17 by krassudi          #+#    #+#             */
-/*   Updated: 2024/07/01 22:30:36 by krassudi         ###   ########.fr       */
+/*   Updated: 2024/07/01 22:34:00 by krassudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	print_hex(unsigned int num, char bs_case)
 {
