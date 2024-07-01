@@ -6,7 +6,7 @@
 #    By: krassudi <krassudi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/30 23:57:36 by krassudi          #+#    #+#              #
-#    Updated: 2024/07/01 00:25:02 by krassudi         ###   ########.fr        #
+#    Updated: 2024/07/01 22:30:57 by krassudi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC_DIR 	= ./src/
 LIB_DIR		= ./libft/
 INCLDIR		= ./include/
 
-SRC_FILES	= ft_printf.c ft_printf_utils.c
+SRC_FILES	= ft_printf.c ft_printf_utils_num.c ft_printf_utils_symbols.c ft_printf_utils_hex.c
 SRC 		= $(addprefix $(SRC_DIR), $(SRC_FILES))
 
 I_L_FLAGS	= -I${INCLDIR} -L${LIB_DIR} -lft
