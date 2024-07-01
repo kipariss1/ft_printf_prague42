@@ -6,12 +6,12 @@
 #    By: krassudi <krassudi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/30 23:57:36 by krassudi          #+#    #+#              #
-#    Updated: 2024/07/01 22:30:57 by krassudi         ###   ########.fr        #
+#    Updated: 2024/07/01 22:43:35 by krassudi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC 			= gcc
-CFLAGS		= -Wall -Werror -Wextra -g3
+CFLAGS		= -Wall -Werror -Wextra -g
 
 NAME 		= libftprintf.a
 SRC_DIR 	= ./src/
@@ -24,8 +24,6 @@ SRC 		= $(addprefix $(SRC_DIR), $(SRC_FILES))
 I_L_FLAGS	= -I${INCLDIR} -L${LIB_DIR} -lft
 
 OBJ 		= $(SRC:.c=.o)
-
-# Colors
 
 DEF_COLOR = \033[0;39m
 GRAY = \033[0;90m
