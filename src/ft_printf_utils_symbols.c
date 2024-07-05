@@ -6,7 +6,7 @@
 /*   By: krassudi <krassudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 14:49:01 by krassudi          #+#    #+#             */
-/*   Updated: 2024/07/01 22:19:31 by krassudi         ###   ########.fr       */
+/*   Updated: 2024/07/05 15:26:56 by krassudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ int	printchar(char ch)
 
 int	printstr(char *str)
 {
+	if (!str)
+	{
+		ft_putstr_fd("(null)", 1);
+		return (6);
+	}
 	ft_putstr_fd(str, 1);
 	return (ft_strlen(str));
 }
