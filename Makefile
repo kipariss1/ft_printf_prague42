@@ -6,7 +6,7 @@
 #    By: krassudi <krassudi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/30 23:57:36 by krassudi          #+#    #+#              #
-#    Updated: 2024/07/01 22:44:46 by krassudi         ###   ########.fr        #
+#    Updated: 2024/07/05 17:59:15 by krassudi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,9 @@ $(NAME) : libft $(OBJ)
 	@echo "$(GREEN) updated libft with printf compiled"
 
 all : $(NAME) clean
+
+re: fclean all 
+	@make "clean"
 
 clean : 
 	rm -f ./libft/libft.a
