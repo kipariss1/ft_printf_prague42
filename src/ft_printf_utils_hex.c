@@ -6,7 +6,7 @@
 /*   By: krassudi <krassudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 22:30:17 by krassudi          #+#    #+#             */
-/*   Updated: 2024/07/01 22:34:00 by krassudi         ###   ########.fr       */
+/*   Updated: 2024/07/05 16:26:14 by krassudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	print_hex(unsigned int num, char bs_case)
 
 	i = 0;
 	len = 0;
+	if (!num)
+		return (write(1, "0", 1));
 	if (bs_case == 'x')
 		base = "0123456789abcdef";
 	else
