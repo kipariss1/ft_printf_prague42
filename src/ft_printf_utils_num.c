@@ -6,7 +6,7 @@
 /*   By: krassudi <krassudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 22:18:40 by krassudi          #+#    #+#             */
-/*   Updated: 2024/07/01 22:33:55 by krassudi         ###   ########.fr       */
+/*   Updated: 2024/07/05 16:14:22 by krassudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static int	numlen(int num)
 	if (num == 0)
 		return (1);
 	len = 0;
+	if (num < 0)
+		len++;
 	while (num)
 	{
 		len++;
